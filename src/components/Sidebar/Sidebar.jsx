@@ -1,21 +1,32 @@
 import React from "react";
 import styles from "./Sidebar.module.scss";
 
-function Sidebar() {
+function Sidebar({ value, onClickCategory }) {
+  const items = [
+    "Все",
+    "Художественная литература",
+    "Нехудожественная литература",
+    "Детям и родителям",
+    "Учебная литература",
+    "Саморазвитие",
+    "Научная литература",
+    "Исскуство и культура",
+    "Психология",
+    "Бизнес литература",
+  ];
+
   return (
     <aside className={styles.sidebar}>
       <h3 className={styles.title}>Книги по жанрам</h3>
       <ul className={styles.list}>
-        <li className={styles.active}>Все</li>
-        <li>Художественная литература</li>
-        <li>Нехудожественная литература</li>
-        <li>Детям и родителям</li>
-        <li>Учебная литература</li>
-        <li>Саморазвитие</li>
-        <li>Научная литература</li>
-        <li>Исскуство и культура</li>
-        <li>Психология</li>
-        <li>Бизнес литература</li>
+        {items.map((name, index) => (
+          <li
+            onClick={() => onClickCategory(index)}
+            className={value === index ? styles.active : ""}
+          >
+            {name}
+          </li>
+        ))}
       </ul>
     </aside>
   );

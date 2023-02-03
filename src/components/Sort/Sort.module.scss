@@ -3,6 +3,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgb(240, 240, 240);
   }
 
   .title {
@@ -15,5 +17,13 @@
 
   .list li {
     margin-right: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      color: #1e9ed1;
+    }
   }
 }
