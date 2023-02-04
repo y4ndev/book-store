@@ -1,22 +1,25 @@
 import React from "react";
 import styles from "./Sort.module.scss";
 
-function Sort() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const sortItems = ["Названия", "Автору", "Цене"];
+function Sort({ value, onChangeSort }) {
+  const items = [
+    { name: "Название", sortProps: "title" },
+    { name: "Автору", sortProps: "author" },
+    { name: "Цене", sortProps: "price" },
+  ];
 
   return (
     <div className={styles.sort}>
       <div className={styles.inner}>
         <span className={styles.title}>Сортировка по:</span>
         <ul className={styles.list}>
-          {sortItems.map((value, index) => (
+          {items.map((item, i) => (
             <li
-              onClick={() => setActiveIndex(index)}
-              key={index}
-              className={activeIndex === index ? styles.active : ""}
+              onClick={() => onChangeSort(item)}
+              key={i}
+              className={value.sortProps === item.sortProps ? styles.active : ""}
             >
-              {value}
+              {item.name}
             </li>
           ))}
         </ul>

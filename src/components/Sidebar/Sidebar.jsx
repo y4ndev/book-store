@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Sidebar.module.scss";
 
-function Sidebar({ value, onClickCategory }) {
+function Sidebar({ value, onChangeCategory }) {
   const items = [
     "Все",
     "Художественная литература",
@@ -21,7 +21,7 @@ function Sidebar({ value, onClickCategory }) {
       <ul className={styles.list}>
         {items.map((name, index) => (
           <li
-            onClick={() => onClickCategory(index)}
+            onClick={() => onChangeCategory(index)}
             className={value === index ? styles.active : ""}
           >
             {name}

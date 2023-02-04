@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./ProductsItem.module.scss";
 
-function ProductsItem({ id, title, imageUrl, price, author }) {
+function ProductsItem({ title, imageUrl, price, author }) {
   return (
     <div className={styles.item}>
-      <img src={imageUrl} alt="book" />
+      <a className={styles.link}>
+        <img src={imageUrl} alt="book" />
+      </a>
       <span className={styles.price}>{price} Р.</span>
       <div className={styles.info}>
         <span className={styles.name}>{title}</span>

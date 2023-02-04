@@ -5,12 +5,26 @@
   margin-bottom: 15px;
   background: #ffffff;
   border-radius: 10px;
-  min-height: 420px;
+  min-height: 440px;
   position: relative;
+  overflow: hidden;
 }
 
 .item img {
   margin-bottom: 10px;
+  height: 280px;
+  transition: all 0.3s;
+
+  &:hover {
+    transition: all 0.3s;
+    transform: scale(1.06);
+  }
+}
+
+.link {
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .info {
@@ -46,6 +60,9 @@
   font-size: 14px;
   color: #7d8290;
   text-align: center;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
   &:hover {
     cursor: pointer;
   }

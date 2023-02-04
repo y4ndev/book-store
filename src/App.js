@@ -10,20 +10,23 @@ import "./styles/app.scss";
 
 function App() {
   const [dataItems, setDataItems] = React.useState([]);
+  const [sortType, setSortType] = React.useState({ name: "Название", sortProps: "title" });
   const [categoryId, setCategoryId] = React.useState(0);
 
   React.useEffect(() => {
-    const category = categoryId > 0 ? `?category=${categoryId}` : "";
+    const category = categoryId > 0 ? `category=${categoryId}` : "";
 
     axios
-      .get(`http://localhost:3001/book${category}`)
+      .get(`http://localhost:3001/book?${category}&_sort=${sortType.sortProps}`)
       .then((resp) => {
         setDataItems(resp.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [categoryId]);
+    window.scroll(0, 0);
+    console.log(sortType);
+  }, [categoryId, sortType]);
 
   return (
     <div className="App">
@@ -32,8 +35,8 @@ function App() {
         <main className="main">
           <div className="container">
             <div className="main__inner">
-              <Sidebar value={categoryId} onClickCategory={(id) => setCategoryId(id)} />
-              <Products data={dataItems} />
+              <Sidebar value={categoryId} onChangeCategory={(id) => setCategoryId(id)} />
+              <Products value={sortType} onChangeSort={(id) => setSortType(id)} data={dataItems} />
             </div>
           </div>
         </main>
