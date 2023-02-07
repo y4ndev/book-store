@@ -1,4 +1,5 @@
 import React from "react";
+import { Pagination } from "../Pagination";
 import { ProductsItem } from "../ProductsItem/ProductsItem";
 import { Sort } from "../Sort";
 import styles from "./Products.module.scss";
@@ -13,6 +14,7 @@ function Products({ data, value, onChangeSort }) {
           <ProductsItem key={index} {...obj} />
         ))}
       </div>
+      <Pagination />
     </div>
   );
 }
