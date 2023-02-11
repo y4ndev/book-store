@@ -1,0 +1,35 @@
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    margin-right: 5px;
+  }
+
+  a {
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+    line-height: 30px;
+
+    font-size: 14px;
+    color: #72727285;
+  }
+
+  li.active a {
+    background-color: #1e9ed1;
+    color: #ffffff;
+    transition: all 0.15s;
+  }
+
+  a:hover {
+    background-color: #1e9ed1;
+    color: #ffffff;
+    transition: all 0.15s;
+  }
+}
