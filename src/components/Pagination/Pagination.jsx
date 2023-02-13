@@ -1,9 +1,11 @@
 import React from "react";
-import { PaginationContext } from "../../App";
+import { setPaginationValue } from "../../store/slices/paginationSlice";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./Pagination.module.scss";
 
 function Pagination() {
-  const { pagination, setPagination } = React.useContext(PaginationContext);
+  const { paginationValue } = useSelector((state) => state.pagination);
+  const dispatch = useDispatch();
 
   const items = ["1", "2", "3"];
 
@@ -11,21 +13,22 @@ function Pagination() {
     <ul className={styles.list}>
       <li
         className={styles.prev}
-        onClick={() => setPagination(pagination > 0 ? pagination - 1 : 0)}
+        onClick={() => dispatch(setPaginationValue(paginationValue > 0 ? paginationValue - 1 : 0))}
       >
         <a>{"<"}</a>
       </li>
       {items.map((value, index) => (
         <li
-          onClick={() => setPagination(index)}
-          className={pagination === index ? styles.active : ""}
+          key={index}
+          onClick={() => dispatch(setPaginationValue(index))}
+          className={paginationValue === index ? styles.active : ""}
         >
           <a>{value}</a>
         </li>
       ))}
       <li
         className={styles.next}
-        onClick={() => setPagination(pagination < 2 ? pagination + 1 : 2)}
+        onClick={() => dispatch(setPaginationValue(paginationValue < 2 ? paginationValue + 1 : 2))}
       >
         <a>{">"}</a>
       </li>

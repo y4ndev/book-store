@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -8,23 +9,22 @@ import { Sidebar } from "./components/Sidebar";
 
 import "./styles/app.scss";
 
-export const SearchContext = React.createContext();
-export const PaginationContext = React.createContext();
-
 function App() {
   const [dataItems, setDataItems] = React.useState([]);
-  const [sortType, setSortType] = React.useState({ name: "Название", sortProps: "title" });
-  const [categoryId, setCategoryId] = React.useState(0);
-  const [searchValue, setSearchValue] = React.useState("");
-  const [pagination, setPagination] = React.useState(0);
+
+  const { categoryId, sortType } = useSelector((state) => state.filter);
+  const { searchValue } = useSelector((state) => state.search);
+  const { paginationValue } = useSelector((state) => state.pagination);
 
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const search = searchValue.length > 0 ? `&q=${searchValue}` : "";
-    const pag = `&_page=${pagination + 1}&_limit=6`;
+    const pagination = `&_page=${paginationValue + 1}&_limit=6`;
 
     axios
-      .get(`http://localhost:3001/book?${category}&_sort=${sortType.sortProps}${search}${pag}`)
+      .get(
+        `http://localhost:3001/book?${category}&_sort=${sortType.sortProps}${search}${pagination}`
+      )
       .then((resp) => {
         setDataItems(resp.data);
       })
@@ -32,30 +32,21 @@ function App() {
         console.error(error);
       });
     window.scroll(0, 0);
-  }, [categoryId, sortType, searchValue, pagination]);
+  }, [categoryId, sortType, searchValue, paginationValue]);
 
   // const num = dataItems.length;
   // console.log(num);
-  console.log(pagination);
+  console.log(categoryId);
 
   return (
     <div className="App">
       <div className="wrapper">
-        <SearchContext.Provider value={{ searchValue, setSearchValue }}>
-          <Header />
-        </SearchContext.Provider>
-
+        <Header />
         <main className="main">
           <div className="container">
             <div className="main__inner">
-              <Sidebar value={categoryId} onChangeCategory={(id) => setCategoryId(id)} />
-              <PaginationContext.Provider value={{ pagination, setPagination }}>
-                <Products
-                  value={sortType}
-                  onChangeSort={(id) => setSortType(id)}
-                  data={dataItems}
-                />
-              </PaginationContext.Provider>
+              <Sidebar />
+              <Products data={dataItems} />
             </div>
           </div>
         </main>

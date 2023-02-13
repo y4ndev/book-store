@@ -4,10 +4,10 @@ import { ProductsItem } from "../ProductsItem/ProductsItem";
 import { Sort } from "../Sort";
 import styles from "./Products.module.scss";
 
-function Products({ data, value, onChangeSort }) {
+function Products({ data}) {
   return (
     <div className={styles.product}>
-      <Sort value={value} onChangeSort={onChangeSort} />
+      <Sort />
       <h3>Все</h3>
       <div className={styles.items}>
         {data.map((obj, index) => (

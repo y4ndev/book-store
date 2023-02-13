@@ -1,7 +1,12 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setCategoryId } from "../../store/slices/filterSlice";
 import styles from "./Sidebar.module.scss";
 
-function Sidebar({ value, onChangeCategory }) {
+function Sidebar() {
+  const categoryId = useSelector((state) => state.filter.categoryId);
+  const dispatch = useDispatch();
+
   const items = [
     "Все",
     "Художественная литература",
@@ -21,8 +26,9 @@ function Sidebar({ value, onChangeCategory }) {
       <ul className={styles.list}>
         {items.map((name, index) => (
           <li
-            onClick={() => onChangeCategory(index)}
-            className={value === index ? styles.active : ""}
+            key={index}
+            onClick={() => dispatch(setCategoryId(index))}
+            className={categoryId === index ? styles.active : ""}
           >
             {name}
           </li>

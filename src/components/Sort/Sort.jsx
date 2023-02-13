@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./Sort.module.scss";
+import { setSortType } from "../../store/slices/filterSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-function Sort({ value, onChangeSort }) {
+function Sort() {
+  const sortType = useSelector((state) => state.filter.sortType);
+  const dispatch = useDispatch();
+
   const items = [
     { name: "Название", sortProps: "title" },
     { name: "Автору", sortProps: "author" },
@@ -15,9 +20,9 @@ function Sort({ value, onChangeSort }) {
         <ul className={styles.list}>
           {items.map((item, i) => (
             <li
-              onClick={() => onChangeSort(item)}
+              onClick={() => dispatch(setSortType(item))}
               key={i}
-              className={value.sortProps === item.sortProps ? styles.active : ""}
+              className={sortType.sortProps === item.sortProps ? styles.active : ""}
             >
               {item.name}
             </li>
