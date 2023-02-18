@@ -1,27 +1,53 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import styles from "./BasketItem.module.scss";
 
+import empty from "../../assets/images/empty.png";
+
 const BasketItem = () => {
+  const { basketItems, totalPrice } = useSelector((state) => state.basket);
+
   return (
     <div className={styles.basket}>
       <div className={styles.title}>
         <h3>Корзина</h3>
       </div>
-      <div className={styles.items}>
-        <div className={styles.item}>
-          <div className={styles.info}>
-            <img src="" alt="" />
-            <span>Название</span>
-            <span>Автор</span>
-          </div>
-          <div className={styles.counter}>
-            <span className={styles.minus}>-</span>
-            <span className={styles.count}>1</span>
-            <span className={styles.plus}>+</span>
-          </div>
-          <span className={styles.cost}>550 Р.</span>
+      {basketItems.length > 0 ? (
+        <div className={styles.items}>
+          {basketItems.map((obj) => (
+            <div className={styles.item}>
+              <div className={styles.info}>
+                <img src={obj.imageUrl} alt="book" />
+                <div className={styles.desc}>
+                  <span>{obj.title}</span>
+                  <span>{obj.author}</span>
+                </div>
+              </div>
+              <div className={styles.counter}>
+                <span className={styles.minus}>-</span>
+                <span className={styles.count}>{obj.count}</span>
+                <span className={styles.plus}>+</span>
+              </div>
+              <span className={styles.cost}>{obj.price * obj.count} Р.</span>
+            </div>
+          ))}
+          <span className={styles.total}>Итого: {totalPrice}</span>
         </div>
-      </div>
+      ) : (
+        <div className={styles.empty}>
+          <img src={empty} alt="empty" />
+          <h4>Корзина пуста</h4>
+          <span className={styles.emptyText}>
+            Воспользуйтесь поиском или перейдите в{" "}
+            <Link className={styles.link} to="/">
+              {" "}
+              каталог
+            </Link>{" "}
+            , чтобы найти интересные товары
+          </span>
+        </div>
+      )}
     </div>
   );
 };

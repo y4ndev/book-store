@@ -4,10 +4,13 @@ import { Search } from "../Search";
 import book from "../../assets/images/book.svg";
 import basket from "../../assets/images/basket.svg";
 import styles from "./Header.module.scss";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const { basketItems } = useSelector((state) => state.basket);
+
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <div className="container">
         <div className={styles.inner}>
           <Link to="/">
@@ -18,12 +21,17 @@ function Header() {
           </Link>
 
           <Search />
-          <Link to="/basket">
-            <img className={styles.basket} src={basket} alt="basket" />
+          <Link className={styles.basket} to="/basket">
+            <img src={basket} alt="basket" />
+            {basketItems.length > 0 ? (
+              <span className={styles.counter}>{basketItems.length}</span>
+            ) : (
+              ""
+            )}
           </Link>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 
