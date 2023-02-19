@@ -5,6 +5,7 @@
   min-height: 600px;
   border-radius: 10px;
   margin-bottom: 50px;
+  position: relative;
 
   .items {
     display: flex;
@@ -51,7 +52,45 @@
     margin-right: 25px;
   }
 
-  .title,
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .clear {
+    color: #1e9ed1;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      padding-bottom: 3px;
+      margin-right: 7px;
+    }
+  }
+
+  .delete {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: #1e9ed1;
+    bottom: 10px;
+    right: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img{
+      padding-bottom: 3px;
+      margin-right: 3px;
+    }
+  }
+
   .author {
     max-width: 178px;
   }

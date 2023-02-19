@@ -70,6 +70,8 @@
 
 .btn {
   position: absolute;
+  text-align: center;
+  color: #000000;
   bottom: 0;
   width: 150px;
   padding: 10px;
@@ -81,6 +83,11 @@
 
   &:hover {
     cursor: pointer;
+    color: #ffffff;
+    background: #1e9ed1;
+  }
+
+  &.active {
     color: #ffffff;
     background: #1e9ed1;
   }
