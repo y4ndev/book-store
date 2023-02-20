@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { setCardId } from "../../store/slices/cardSlice";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./ProductsItem.module.scss";
 
 function ProductsItem({ id, title, imageUrl, price, author, handleClick }) {
   const { basketItems } = useSelector((state) => state.basket);
+  const dispatch = useDispatch();
 
   const item = {
     id,
@@ -18,9 +20,9 @@ function ProductsItem({ id, title, imageUrl, price, author, handleClick }) {
 
   return (
     <div className={styles.item}>
-      <a className={styles.link}>
+      <Link onClick={() => dispatch(setCardId(id))} to={`card/${id}`} className={styles.link}>
         <img src={imageUrl} alt="book" />
-      </a>
+      </Link>
       <span className={styles.price}>{price} Р.</span>
       <div className={styles.info}>
         <span className={styles.name}>{title}</span>
