@@ -7,13 +7,12 @@ import { Sort } from "../Sort";
 import styles from "./Products.module.scss";
 
 function Products({ data }) {
-  const { basketItems } = useSelector((state) => state.basket);
   const dispatch = useDispatch();
 
   const onClickAdd = (obj, id) => {
     dispatch(addBasketItem(obj));
-   
   };
+
 
   return (
     <div className={styles.product}>

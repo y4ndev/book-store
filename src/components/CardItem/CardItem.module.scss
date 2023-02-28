@@ -1,0 +1,65 @@
+.card {
+  padding: 25px;
+  background: #ffffff;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  min-height: 600px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.left {
+  max-width: 500px;
+}
+.info {
+  display: flex;
+}
+
+.info img {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.names > * {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.right > * {
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.btn {
+  text-align: center;
+  color: #ffffff;
+  background: #1e9ed1;
+  bottom: 0;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.notFound {
+  text-align: center;
+  position: relative;
+  top: calc(50% - 27px);
+}

@@ -1,10 +1,10 @@
 import React from "react";
-import { setPaginationValue } from "../../store/slices/paginationSlice";
+import { setPaginationValue } from "../../store/slices/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./Pagination.module.scss";
 
 function Pagination() {
-  const { paginationValue } = useSelector((state) => state.pagination);
+  const { paginationValue } = useSelector((state) => state.filter);
   const dispatch = useDispatch();
 
   const items = ["1", "2", "3"];

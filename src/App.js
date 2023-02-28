@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { NotFound } from "./components/NotFound";
 import Basket from "./pages/Basket";
 import Card from "./pages/Card";
 import Home from "./pages/Home";
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="basket" element={<Basket />} />
                 <Route path="card/:id" element={<Card />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
           </div>

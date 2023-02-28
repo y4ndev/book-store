@@ -10,7 +10,7 @@ const Home = () => {
 
   const { categoryId, sortType } = useSelector((state) => state.filter);
   const { searchValue } = useSelector((state) => state.search);
-  const { paginationValue } = useSelector((state) => state.pagination);
+  const { paginationValue } = useSelector((state) => state.filter);
 
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";

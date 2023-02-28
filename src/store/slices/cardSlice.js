@@ -10,7 +10,6 @@ export const cardSlice = createSlice({
   reducers: {
     setCardId: (state, action) => {
       state.cardId = action.payload;
-      console.log(action.payload);
     },
   },
 });

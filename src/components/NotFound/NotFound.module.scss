@@ -1,0 +1,14 @@
+.notFound {
+  padding: 25px;
+  background: #ffffff;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  min-height: 600px;
+
+  h1 {
+    text-align: center;
+    position: relative;
+    top: calc(50% - 27px);
+  }
+}
