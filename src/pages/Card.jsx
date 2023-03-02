@@ -1,37 +1,25 @@
 import React from "react";
-import axios from "axios";
+import { fetchDataCard } from "../store/slices/dataSlice";
 import { useParams } from "react-router-dom";
 
 import { CardItem } from "../components/CardItem";
 import { NotFound } from "../components/NotFound";
+import { useDispatch, useSelector } from "react-redux";
 
 const Card = () => {
-  const [dataItems, setDataItems] = React.useState([]);
-  const [dataId, setDataId] = React.useState();
+
+  const { dataCard, status } = useSelector((state) => state.data);
+
+  const dispatch = useDispatch();
   const { id } = useParams();
 
   React.useEffect(() => {
-    const fetchData = async () => {
-      await axios
-        .get(`http://localhost:3001/book/${id}`)
-        .then((resp) => {
-          setDataItems(resp.data);
-          setDataId(resp.data.id);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-      window.scroll(0, 0);
-      console.log("1");
-    };
-    fetchData();
+    dispatch(fetchDataCard(id));
   }, []);
-  console.log("2");
+
+
   return (
-    <>
-      {" "}
-      <CardItem {...dataItems} />{" "}
-    </>
+    <>{status === "error" ? <NotFound /> : <CardItem {...dataCard} />}</>
   );
 };
 

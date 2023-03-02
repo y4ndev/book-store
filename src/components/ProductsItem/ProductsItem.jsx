@@ -1,10 +1,11 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styles from "./ProductsItem.module.scss";
 
 function ProductsItem({ id, title, imageUrl, price, author, handleClick }) {
   const { basketItems } = useSelector((state) => state.basket);
+
 
   const item = {
     id,
@@ -15,9 +16,6 @@ function ProductsItem({ id, title, imageUrl, price, author, handleClick }) {
   };
 
   const inBasket = basketItems.find((obj) => obj.id === id);
-
-  const { idd } = useParams();
-  console.log(idd);
 
   return (
     <div className={styles.item}>
