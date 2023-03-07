@@ -1,5 +1,6 @@
 import React from "react";
 import Loader from "./Loader";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import styles from "./CardItem.module.scss";
@@ -7,6 +8,7 @@ import styles from "./CardItem.module.scss";
 const CardItem = ({ id, imageUrl, title, author, price }) => {
   const [isLoading, setIsLoading] = React.useState(false);
   const { status } = useSelector((state) => state.data);
+  const { categoryName } = useSelector((state) => state.filter);
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -20,6 +22,9 @@ const CardItem = ({ id, imageUrl, title, author, price }) => {
 
   return (
     <div className={styles.card}>
+      <div className={styles.crumbs}>
+        <Link to="/">Назад</Link>
+      </div>
       {isLoading ? (
         <div className={styles.inner}>
           <div className={styles.loader}>

@@ -6,7 +6,7 @@ import { Products } from "../components/Products";
 import { Sidebar } from "../components/Sidebar";
 
 const Home = () => {
-  const { dataItems, status } = useSelector((state) => state.data);
+  const { dataItems } = useSelector((state) => state.data);
   const dispatch = useDispatch();
 
   const { categoryId, sortType } = useSelector((state) => state.filter);
@@ -19,14 +19,6 @@ const Home = () => {
     const pagination = `&_page=${paginationValue + 1}&_limit=6`;
     const sort = sortType.sortProps;
 
-    // axios
-    //   .get(`http://localhost:3001/book?${category}&_sort=${sort}${search}${pagination}`)
-    //   .then((resp) => {
-    //     setDataItems(resp.data);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
 
     dispatch(fetchDataItems({ category, search, pagination, sort }));
     window.scroll(0, 0);

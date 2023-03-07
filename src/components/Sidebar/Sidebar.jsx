@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setCategoryId } from "../../store/slices/filterSlice";
+import { setCategoryId, setCategoryName } from "../../store/slices/filterSlice";
 import styles from "./Sidebar.module.scss";
 
 function Sidebar() {
@@ -20,6 +20,11 @@ function Sidebar() {
     "Бизнес литература",
   ];
 
+  function clickCategoryId(index, name) {
+    dispatch(setCategoryId(index));
+    dispatch(setCategoryName(name));
+  }
+
   return (
     <aside className={styles.sidebar}>
       <h3 className={styles.title}>Книги по жанрам</h3>
@@ -27,7 +32,7 @@ function Sidebar() {
         {items.map((name, index) => (
           <li
             key={index}
-            onClick={() => dispatch(setCategoryId(index))}
+            onClick={() => clickCategoryId(index, name)}
             className={categoryId === index ? styles.active : ""}
           >
             {name}

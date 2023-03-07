@@ -16,10 +16,14 @@
 }
 
 .loader {
- display: grid;
- justify-items: center;
- align-items: center;
- height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+}
+
+.crumbs a {
+  color: #1e9ed1;
 }
 
 .left {

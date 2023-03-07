@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   categoryId: 0,
+  categoryName: "",
   sortType: {
     name: "Название",
     sortProps: "title",
@@ -17,8 +18,12 @@ export const filterSlice = createSlice({
       state.categoryId = action.payload;
       state.paginationValue = 0;
     },
+    setCategoryName: (state, action) => {
+      state.categoryName = action.payload;
+    },
     setSortType: (state, action) => {
       state.sortType = action.payload;
+      console.log(action.payload);
     },
     setPaginationValue: (state, action) => {
       state.paginationValue = action.payload;
@@ -27,6 +32,7 @@ export const filterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setCategoryId, setSortType, setPaginationValue } = filterSlice.actions;
+export const { setCategoryId, setSortType, setPaginationValue, setCategoryName } =
+  filterSlice.actions;
 
 export default filterSlice.reducer;

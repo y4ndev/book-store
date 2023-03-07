@@ -2,9 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchDataItems = createAsyncThunk("items/fetchDataItemsStatus", async (params) => {
-  const { category, sortType, search, pagination } = params;
+  const { category, sort, search, pagination } = params;
   const resp = await axios.get(
-    `http://localhost:3001/book?${category}&_sort=${sortType}${search}${pagination}`
+    `http://localhost:3001/book?${category}&_sort=${sort}${search}${pagination}`
   );
 
   return resp.data;
@@ -34,13 +34,11 @@ export const dataSlice = createSlice({
     [fetchDataItems.pending]: (state) => {
       state.status = "loading";
       state.dataItems = [];
-      
     },
 
     [fetchDataItems.fulfilled]: (state, action) => {
       state.dataItems = action.payload;
       state.status = "success";
-    
     },
 
     [fetchDataItems.rejected]: (state) => {

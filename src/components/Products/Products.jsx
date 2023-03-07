@@ -7,17 +7,17 @@ import { Sort } from "../Sort";
 import styles from "./Products.module.scss";
 
 function Products({ data }) {
+  const { categoryName } = useSelector((state) => state.filter);
   const dispatch = useDispatch();
 
   const onClickAdd = (obj, id) => {
     dispatch(addBasketItem(obj));
   };
 
-
   return (
     <div className={styles.product}>
       <Sort />
-      <h3>Все</h3>
+      <h3>{categoryName}</h3>
       <div className={styles.items}>
         {data.map((obj, index) => (
           <ProductsItem handleClick={onClickAdd} key={index} {...obj} />
