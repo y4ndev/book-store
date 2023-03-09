@@ -12,10 +12,22 @@ import styles from "./BasketItem.module.scss";
 
 import empty from "../../assets/images/empty.png";
 
-const BasketItem = () => {
-  const { basketItems, totalPrice } = useSelector((state) => state.basket);
+interface basketItemsType {
+  id: number;
+  imageUrl: string;
+  title: string;
+  author: string;
+  count: number;
+  price: number;
+}
 
-  const totalCost = basketItems.reduce((sum, obj) => sum + obj.price * obj.count, 0);
+const BasketItem: React.FC = () => {
+  const { basketItems } = useSelector((state: any) => state.basket);
+
+  const totalCost = basketItems.reduce(
+    (sum: number, obj: { price: number; count: number }) => sum + obj.price * obj.count,
+    0
+  );
   const dispatch = useDispatch();
 
   return (
@@ -29,7 +41,7 @@ const BasketItem = () => {
       </div>
       {basketItems.length > 0 ? (
         <div className={styles.items}>
-          {basketItems.map((obj) => (
+          {basketItems.map((obj: basketItemsType) => (
             <div className={styles.item}>
               <div className={styles.info}>
                 <img src={obj.imageUrl} alt="book" />

@@ -1,14 +1,30 @@
 import React from "react";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { addBasketItem } from "../../store/slices/basketSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./CardItem.module.scss";
 
 const CardItem = ({ id, imageUrl, title, author, price }) => {
   const [isLoading, setIsLoading] = React.useState(false);
   const { status } = useSelector((state) => state.data);
-  const { categoryName } = useSelector((state) => state.filter);
+  const { basketItems } = useSelector((state) => state.basket);
+  const dispatch = useDispatch();
+
+  const dataItem = {
+    id,
+    imageUrl,
+    title,
+    author,
+    price,
+  };
+
+  const inBasket = basketItems.find((obj) => obj.id === id);
+
+  const onClickAdd = (obj) => {
+    dispatch(addBasketItem(obj));
+  };
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -56,7 +72,16 @@ const CardItem = ({ id, imageUrl, title, author, price }) => {
           </div>
           <div className={styles.right}>
             <span className={styles.price}>{price} р.</span>
-            <button className={styles.btn}>Купить</button>
+
+            {inBasket ? (
+              <Link to="/basket" className={styles.btn + " " + styles.active}>
+                К оформлению
+              </Link>
+            ) : (
+              <button onClick={() => onClickAdd(dataItem)} className={styles.btn}>
+                Купить
+              </button>
+            )}
           </div>
         </div>
       )}

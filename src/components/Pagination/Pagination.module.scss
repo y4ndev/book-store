@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 25px;
+  margin: 0 auto;
 
   li {
     margin-right: 5px;
