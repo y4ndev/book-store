@@ -19,12 +19,11 @@ const Home = () => {
     const pagination = `&_page=${paginationValue + 1}&_limit=6`;
     const sort = sortType.sortProps;
 
-
     dispatch(fetchDataItems({ category, search, pagination, sort }));
     window.scroll(0, 0);
   }, [categoryId, sortType, searchValue, paginationValue]);
 
-
+  
 
   return (
     <>

@@ -5,6 +5,7 @@ import {
   minusBasketItem,
   removeBasketItem,
 } from "../../store/slices/basketSlice";
+import { IData } from "../../@types/types";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import barbage from "../../assets/images/barbage.png";
@@ -12,14 +13,8 @@ import styles from "./BasketItem.module.scss";
 
 import empty from "../../assets/images/empty.png";
 
-interface basketItemsType {
-  id: number;
-  imageUrl: string;
-  title: string;
-  author: string;
-  count: number;
-  price: number;
-}
+
+
 
 const BasketItem: React.FC = () => {
   const { basketItems } = useSelector((state: any) => state.basket);
@@ -41,7 +36,7 @@ const BasketItem: React.FC = () => {
       </div>
       {basketItems.length > 0 ? (
         <div className={styles.items}>
-          {basketItems.map((obj: basketItemsType) => (
+          {basketItems.map((obj: IData) => (
             <div className={styles.item}>
               <div className={styles.info}>
                 <img src={obj.imageUrl} alt="book" />

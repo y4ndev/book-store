@@ -6,10 +6,20 @@ import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./CardItem.module.scss";
 
-const CardItem = ({ id, imageUrl, title, author, price }) => {
+interface CardItemProps {
+  id: number;
+  imageUrl: string;
+  title: string;
+  author: string;
+  price: number;
+}
+
+
+
+const CardItem: React.FC<CardItemProps> = ({ id, imageUrl, title, author, price }) => {
   const [isLoading, setIsLoading] = React.useState(false);
-  const { status } = useSelector((state) => state.data);
-  const { basketItems } = useSelector((state) => state.basket);
+  const { status } = useSelector((state: any) => state.data);
+  const { basketItems } = useSelector((state: any) => state.basket);
   const dispatch = useDispatch();
 
   const dataItem = {
@@ -20,9 +30,9 @@ const CardItem = ({ id, imageUrl, title, author, price }) => {
     price,
   };
 
-  const inBasket = basketItems.find((obj) => obj.id === id);
+  const inBasket = basketItems.find((obj: { id: number }) => obj.id === id);
 
-  const onClickAdd = (obj) => {
+  const onClickAdd = (obj: CardItemProps) => {
     dispatch(addBasketItem(obj));
   };
 

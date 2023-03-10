@@ -7,10 +7,13 @@ import basket from "../../assets/images/basket.svg";
 import styles from "./Header.module.scss";
 import { useSelector } from "react-redux";
 
-function Header() {
-  const { basketItems } = useSelector((state) => state.basket);
+const Header: React.FC = () => {
+  const { basketItems } = useSelector((state: any) => state.basket);
 
-  const basketCount = basketItems.reduce((sum, obj) => obj.count + sum, 0);
+  const basketCount = basketItems.reduce(
+    (sum: number, obj: { count: number }) => obj.count + sum,
+    0
+  );
 
   return (
     <header className={styles.header}>
@@ -25,7 +28,7 @@ function Header() {
 
           <Routes>
             <Route path="/" element={<Search />} />
-            <Route path="basket" element={''} />
+            <Route path="basket" element={""} />
           </Routes>
 
           <Link className={styles.basket} to="/basket">
@@ -36,6 +39,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export { Header };

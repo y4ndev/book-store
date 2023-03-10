@@ -3,8 +3,8 @@ import { setPaginationValue } from "../../store/slices/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./Pagination.module.scss";
 
-function Pagination() {
-  const { paginationValue } = useSelector((state) => state.filter);
+const Pagination: React.FC = () => {
+  const { paginationValue } = useSelector((state: any) => state.filter);
   const dispatch = useDispatch();
 
   const items = ["1", "2", "3"];
@@ -34,6 +34,6 @@ function Pagination() {
       </li>
     </ul>
   );
-}
+};
 
 export { Pagination };

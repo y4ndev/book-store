@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { setCategoryId, setCategoryName } from "../../store/slices/filterSlice";
 import styles from "./Sidebar.module.scss";
 
-function Sidebar() {
-  const categoryId = useSelector((state) => state.filter.categoryId);
+const Sidebar: React.FC = () => {
+  const categoryId = useSelector((state: any) => state.filter.categoryId);
   const dispatch = useDispatch();
 
   const items = [
@@ -20,7 +20,7 @@ function Sidebar() {
     "Бизнес литература",
   ];
 
-  function clickCategoryId(index, name) {
+  function clickCategoryId(index: number, name: string) {
     dispatch(setCategoryId(index));
     dispatch(setCategoryName(name));
   }
@@ -41,6 +41,6 @@ function Sidebar() {
       </ul>
     </aside>
   );
-}
+};
 
 export { Sidebar };

@@ -1,1 +1,1 @@
-export { CardItem } from "./CardItem.jsx";
+export { CardItem } from "./CardItem";

@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearchValue } from "../../store/slices/searchSlice";
 import styles from "./Search.module.scss";
 
-function Search() {
-  const { searchValue } = useSelector((state) => state.search);
+const Search: React.FC = () => {
+  const { searchValue } = useSelector((state: any) => state.search);
   const dispatch = useDispatch();
 
   return (
@@ -17,6 +17,6 @@ function Search() {
       />
     </div>
   );
-}
+};
 
 export { Search };
