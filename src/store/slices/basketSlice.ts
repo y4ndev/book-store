@@ -1,6 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
-const initialState = {
+export type IBasketItem = {
+  id: number;
+  title: string;
+  author: string;
+  imageUrl: string;
+  price: number;
+  count: number;
+};
+
+interface BasketSliceState {
+  basketItems: IBasketItem[];
+  totalPrice: number;
+  totalCount: number;
+}
+
+const initialState: BasketSliceState = {
   basketItems: [],
   totalPrice: 0,
   totalCount: 0,
@@ -10,9 +26,9 @@ export const basketSlice = createSlice({
   name: "basket",
   initialState,
   reducers: {
-    addBasketItem: (state, action) => {
+    addBasketItem: (state, action: PayloadAction<IBasketItem>) => {
       const findItem = state.basketItems.find((obj) => obj.id === action.payload.id);
-      if (findItem) {
+      if (findItem && findItem.count) {
         findItem.count++;
       } else {
         state.basketItems.push({ ...action.payload, count: 1 });
@@ -24,14 +40,16 @@ export const basketSlice = createSlice({
       console.log(...state.basketItems);
     },
 
-    plusBasketItem: (state, action) => {
+    plusBasketItem: (state, action: PayloadAction<number>) => {
       const findItem = state.basketItems.find((obj) => obj.id === action.payload);
-      findItem.count++;
+      if (findItem) {
+        findItem.count++;
+      }
     },
 
-    minusBasketItem: (state, action) => {
+    minusBasketItem: (state, action: PayloadAction<number>) => {
       const findItem = state.basketItems.find((obj) => obj.id === action.payload);
-      if (findItem.count > 1) {
+      if (findItem && findItem.count > 1) {
         findItem.count--;
       }
     },
@@ -44,6 +62,8 @@ export const basketSlice = createSlice({
     },
   },
 });
+
+export const selectBasket = (state: RootState) => state.basket;
 
 // Action creators are generated for each case reducer function
 export const { addBasketItem, clearBasket, plusBasketItem, minusBasketItem, removeBasketItem } =

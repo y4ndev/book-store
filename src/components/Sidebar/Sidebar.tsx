@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setCategoryId, setCategoryName } from "../../store/slices/filterSlice";
+import { selectFilter, setCategoryId, setCategoryName } from "../../store/slices/filterSlice";
 import styles from "./Sidebar.module.scss";
 
 const Sidebar: React.FC = () => {
-  const categoryId = useSelector((state: any) => state.filter.categoryId);
+  const { categoryId } = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const items = [

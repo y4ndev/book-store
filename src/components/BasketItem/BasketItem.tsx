@@ -4,20 +4,17 @@ import {
   plusBasketItem,
   minusBasketItem,
   removeBasketItem,
+  selectBasket,
 } from "../../store/slices/basketSlice";
-import { IData } from "../../@types/types";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import barbage from "../../assets/images/barbage.png";
-import styles from "./BasketItem.module.scss";
-
 import empty from "../../assets/images/empty.png";
-
-
-
+import styles from "./BasketItem.module.scss";
+import { Goods } from "../../store/slices/dataSlice";
 
 const BasketItem: React.FC = () => {
-  const { basketItems } = useSelector((state: any) => state.basket);
+  const { basketItems } = useSelector(selectBasket);
 
   const totalCost = basketItems.reduce(
     (sum: number, obj: { price: number; count: number }) => sum + obj.price * obj.count,
@@ -36,7 +33,7 @@ const BasketItem: React.FC = () => {
       </div>
       {basketItems.length > 0 ? (
         <div className={styles.items}>
-          {basketItems.map((obj: IData) => (
+          {basketItems.map((obj: Goods & { count: number }) => (
             <div className={styles.item}>
               <div className={styles.info}>
                 <img src={obj.imageUrl} alt="book" />

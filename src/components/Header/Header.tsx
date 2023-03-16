@@ -6,9 +6,10 @@ import book from "../../assets/images/book.svg";
 import basket from "../../assets/images/basket.svg";
 import styles from "./Header.module.scss";
 import { useSelector } from "react-redux";
+import { selectBasket } from "../../store/slices/basketSlice";
 
 const Header: React.FC = () => {
-  const { basketItems } = useSelector((state: any) => state.basket);
+  const { basketItems } = useSelector(selectBasket);
 
   const basketCount = basketItems.reduce(
     (sum: number, obj: { count: number }) => obj.count + sum,

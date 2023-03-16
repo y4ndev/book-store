@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
-const initialState = {
+interface CardSliceState {
+  cardId: string;
+}
+
+const initialState: CardSliceState = {
   cardId: "",
 };
 
@@ -14,6 +19,7 @@ export const cardSlice = createSlice({
   },
 });
 
+export const selectCard = (state: RootState) => state.card;
 // Action creators are generated for each case reducer function
 export const { setCardId } = cardSlice.actions;
 

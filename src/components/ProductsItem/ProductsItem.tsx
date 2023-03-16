@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addBasketItem } from "../../store/slices/basketSlice";
 import styles from "./ProductsItem.module.scss";
 
 interface ProductsItemProps {
@@ -9,18 +10,11 @@ interface ProductsItemProps {
   imageUrl: string;
   price: number;
   author: string;
-  handleClick: ({}) => void;
 }
 
-const ProductsItem: React.FC<ProductsItemProps> = ({
-  id,
-  title,
-  imageUrl,
-  price,
-  author,
-  handleClick,
-}) => {
+const ProductsItem: React.FC<ProductsItemProps> = ({ id, title, imageUrl, price, author }) => {
   const { basketItems } = useSelector((state: any) => state.basket);
+  const dispatch = useDispatch();
 
   const dataItem = {
     id,
@@ -28,6 +22,7 @@ const ProductsItem: React.FC<ProductsItemProps> = ({
     title,
     author,
     price,
+    count: 0,
   };
 
   const inBasket = basketItems.find((obj: { id: number }) => obj.id === id);
@@ -47,7 +42,7 @@ const ProductsItem: React.FC<ProductsItemProps> = ({
           К оформлению
         </Link>
       ) : (
-        <button onClick={() => handleClick(dataItem)} className={styles.btn}>
+        <button onClick={() => dispatch(addBasketItem(dataItem))} className={styles.btn}>
           В корзину
         </button>
       )}

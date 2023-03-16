@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Sort.module.scss";
-import { setSortType } from "../../store/slices/filterSlice";
+import { selectFilter, setSortType } from "../../store/slices/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Sort: React.FC = () => {
-  const sortType = useSelector((state: any) => state.filter.sortType);
+  const { sortType } = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const items = [

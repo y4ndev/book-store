@@ -1,38 +1,40 @@
 import React from "react";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
-import { addBasketItem } from "../../store/slices/basketSlice";
+import { addBasketItem, selectBasket } from "../../store/slices/basketSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./CardItem.module.scss";
+import { Goods, selectData } from "../../store/slices/dataSlice";
 
-interface CardItemProps {
+interface CardGoods {
   id: number;
-  imageUrl: string;
   title: string;
+  imageUrl: string;
   author: string;
   price: number;
+  count: number;
 }
 
-
-
-const CardItem: React.FC<CardItemProps> = ({ id, imageUrl, title, author, price }) => {
+const CardItem: React.FC<Goods> = ({ id, imageUrl, title, author, price }) => {
   const [isLoading, setIsLoading] = React.useState(false);
-  const { status } = useSelector((state: any) => state.data);
-  const { basketItems } = useSelector((state: any) => state.basket);
+
+  const { status } = useSelector(selectData);
+  const { basketItems } = useSelector(selectBasket);
   const dispatch = useDispatch();
 
-  const dataItem = {
+  const dataItem: CardGoods = {
     id,
     imageUrl,
     title,
     author,
     price,
+    count: 0,
   };
 
   const inBasket = basketItems.find((obj: { id: number }) => obj.id === id);
 
-  const onClickAdd = (obj: CardItemProps) => {
+  const onClickAdd = (obj: CardGoods) => {
     dispatch(addBasketItem(obj));
   };
 

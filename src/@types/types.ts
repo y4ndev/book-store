@@ -1,8 +1,8 @@
 export interface IData {
   id: number;
-  imageUrl: string;
   title: string;
+  imageUrl: string;
   author: string;
-  count: number;
   price: number;
+  count: number;
 }

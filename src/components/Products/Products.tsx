@@ -1,22 +1,22 @@
 import React from "react";
-import { IData } from "../../@types/types";
 import { CSSTransition } from "react-transition-group";
-import { useDispatch, useSelector } from "react-redux";
-import { addBasketItem } from "../../store/slices/basketSlice";
+import { useSelector } from "react-redux";
 import { Pagination } from "../Pagination";
 import { ProductsItem } from "../ProductsItem/ProductsItem";
 import { Sort } from "../Sort";
 import styles from "./Products.module.scss";
 import "./Transition.scss";
+import { Goods, selectData } from "../../store/slices/dataSlice";
+import { selectFilter } from "../../store/slices/filterSlice";
 
 interface ProductsProps {
-  data: IData[];
+  data: Goods[];
 }
 
 const Products: React.FC<ProductsProps> = ({ data }) => {
   const [show, setShow] = React.useState(false);
-  const { categoryName } = useSelector((state: any) => state.filter);
-  const { status } = useSelector((state: any) => state.data);
+  const { categoryName } = useSelector(selectFilter);
+  const { status } = useSelector(selectData);
 
   React.useEffect(() => {
     setShow(false);
@@ -25,12 +25,6 @@ const Products: React.FC<ProductsProps> = ({ data }) => {
     }
   }, [status]);
 
-  const dispatch = useDispatch();
-
-  const onClickAdd = (obj: object) => {
-    dispatch(addBasketItem(obj));
-  };
-
   return (
     <div className={styles.product}>
       <Sort />
@@ -38,7 +32,7 @@ const Products: React.FC<ProductsProps> = ({ data }) => {
       <CSSTransition in={show} timeout={500} unmountOnExit classNames="my-node">
         <div className={styles.items}>
           {data.map((obj, index: number) => (
-            <ProductsItem handleClick={onClickAdd} key={index} {...obj} />
+            <ProductsItem key={index} {...obj} />
           ))}
         </div>
       </CSSTransition>
