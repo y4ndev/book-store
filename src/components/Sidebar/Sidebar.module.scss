@@ -29,3 +29,20 @@
     }
   }
 }
+
+@media (max-width: 991px) {
+  .sidebar {
+    min-height: auto;
+    position: static;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .list li {
+      margin-right: 5px;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import styles from "./Sort.module.scss";
 import { selectFilter, setSortType } from "../../store/slices/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-const Sort: React.FC = () => {
+const Sort: React.FC = React.memo(() => {
   const { sortType } = useSelector(selectFilter);
   const dispatch = useDispatch();
 
@@ -31,6 +31,6 @@ const Sort: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export { Sort };

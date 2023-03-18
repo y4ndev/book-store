@@ -9,6 +9,7 @@ import "./Transition.scss";
 import { Goods, selectData } from "../../store/slices/dataSlice";
 import { selectFilter } from "../../store/slices/filterSlice";
 
+
 interface ProductsProps {
   data: Goods[];
 }
@@ -17,6 +18,8 @@ const Products: React.FC<ProductsProps> = ({ data }) => {
   const [show, setShow] = React.useState(false);
   const { categoryName } = useSelector(selectFilter);
   const { status } = useSelector(selectData);
+
+ 
 
   React.useEffect(() => {
     setShow(false);

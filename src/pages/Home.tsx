@@ -2,17 +2,18 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../store/store";
-import { fetchDataItems } from "../store/slices/dataSlice";
+import { fetchDataItems, selectData } from "../store/slices/dataSlice";
 import { Products } from "../components/Products";
 import { Sidebar } from "../components/Sidebar";
+import { selectFilter } from "../store/slices/filterSlice";
+import { selectSearch } from "../store/slices/searchSlice";
 
 const Home = () => {
-  const { dataItems } = useSelector((state: any) => state.data);
+  const { dataItems } = useSelector(selectData);
   const dispatch = useAppDispatch();
 
-  const { categoryId, sortType } = useSelector((state: any) => state.filter);
-  const { searchValue } = useSelector((state: any) => state.search);
-  const { paginationValue } = useSelector((state: any) => state.filter);
+  const { categoryId, sortType, paginationValue } = useSelector(selectFilter);
+  const { searchValue } = useSelector(selectSearch);
 
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
@@ -26,7 +27,7 @@ const Home = () => {
 
   return (
     <>
-      <Sidebar />
+      <Sidebar value={categoryId} />
       <Products data={dataItems} />
     </>
   );

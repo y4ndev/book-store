@@ -10,6 +10,12 @@ export type Goods = {
   price: number;
 };
 
+export enum Status {
+  LOADING = "loading",
+  SUCCESS = "success",
+  ERROR = "error",
+}
+
 interface DataSliceState {
   dataItems: Goods[];
   dataCard: Goods;
@@ -37,7 +43,7 @@ export const fetchDataCard = createAsyncThunk("items/fetchDataCardStatus", async
 const initialState: DataSliceState = {
   dataItems: [],
   dataCard: {} as Goods,
-  status: "",
+  status: Status.LOADING,
   loading: true,
 };
 
@@ -52,29 +58,29 @@ export const dataSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(fetchDataItems.pending, (state) => {
-      state.status = "loading";
+      state.status = Status.LOADING;
       state.dataItems = [];
     });
     builder.addCase(fetchDataItems.fulfilled, (state, action: PayloadAction<Goods[]>) => {
       state.dataItems = action.payload;
-      state.status = "success";
+      state.status = Status.SUCCESS;
     });
     builder.addCase(fetchDataItems.rejected, (state) => {
       state.dataItems = [];
-      state.status = "error";
+      state.status = Status.ERROR;
     });
 
     builder.addCase(fetchDataCard.pending, (state) => {
-      state.status = "loading";
+      state.status = Status.LOADING;
       state.dataCard = {} as Goods;
     });
     builder.addCase(fetchDataCard.fulfilled, (state, action: PayloadAction<Goods>) => {
       state.dataCard = action.payload;
-      state.status = "success";
+      state.status = Status.SUCCESS;
     });
     builder.addCase(fetchDataCard.rejected, (state) => {
       state.dataCard = {} as Goods;
-      state.status = "error";
+      state.status = Status.ERROR;
     });
   },
 });

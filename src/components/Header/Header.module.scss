@@ -34,6 +34,7 @@
   .logo img {
     width: 35px;
     height: 35px;
+    margin-right: 15px;
   }
 
   .basket {
@@ -41,9 +42,15 @@
     height: 35px;
     margin: 0;
     position: relative;
+   
 
     &:hover {
       cursor: pointer;
+    }
+
+    & img {
+     width: 35px;
+     height: 35px;
     }
   }
 
@@ -59,5 +66,13 @@
     height: 16px;
     border-radius: 50%;
     background-color: red;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    .logo span {
+      display: none;
+    }
   }
 }

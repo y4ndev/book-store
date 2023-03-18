@@ -1,11 +1,16 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectFilter, setCategoryId, setCategoryName } from "../../store/slices/filterSlice";
+import { useDispatch } from "react-redux";
+import { setCategoryId, setCategoryName } from "../../store/slices/filterSlice";
 import styles from "./Sidebar.module.scss";
 
-const Sidebar: React.FC = () => {
-  const { categoryId } = useSelector(selectFilter);
+interface SidebarProps {
+  value: number;
+}
+
+const Sidebar: React.FC<SidebarProps> = React.memo(({ value }) => {
   const dispatch = useDispatch();
+
+  console.log("render");
 
   const items = [
     "Все",
@@ -33,7 +38,7 @@ const Sidebar: React.FC = () => {
           <li
             key={index}
             onClick={() => clickCategoryId(index, name)}
-            className={categoryId === index ? styles.active : ""}
+            className={value === index ? styles.active : ""}
           >
             {name}
           </li>
@@ -41,6 +46,5 @@ const Sidebar: React.FC = () => {
       </ul>
     </aside>
   );
-};
-
+});
 export { Sidebar };

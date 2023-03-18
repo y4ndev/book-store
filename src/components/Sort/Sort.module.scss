@@ -16,7 +16,7 @@
     display: flex;
   }
 
-  .list li {
+  .list li:not(:last-of-type) {
     margin-right: 20px;
 
     &:hover {
@@ -25,6 +25,17 @@
 
     &.active {
       color: #1e9ed1;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .sort {
+    .title {
+      margin-right: 10px;
+    }
+    .list li:not(:last-of-type) {
+      margin-right: 7px;
     }
   }
 }

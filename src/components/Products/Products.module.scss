@@ -8,11 +8,19 @@
 
   .items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 220px);
+    grid-template-columns: repeat(auto-fill, 31%);
     grid-template-rows: 1fr;
     column-gap: 10px;
     row-gap: 15px;
     justify-content: space-between;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product {
+    .items {
+      grid-template-columns: repeat(auto-fill, 48%);
+    }
   }
 }

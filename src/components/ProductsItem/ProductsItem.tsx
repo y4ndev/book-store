@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBasketItem } from "../../store/slices/basketSlice";
 import styles from "./ProductsItem.module.scss";
 
+
 interface ProductsItemProps {
   id: number;
   title: string;
@@ -15,6 +16,8 @@ interface ProductsItemProps {
 const ProductsItem: React.FC<ProductsItemProps> = ({ id, title, imageUrl, price, author }) => {
   const { basketItems } = useSelector((state: any) => state.basket);
   const dispatch = useDispatch();
+
+
 
   const dataItem = {
     id,
