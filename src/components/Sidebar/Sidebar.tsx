@@ -10,7 +10,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = React.memo(({ value }) => {
   const dispatch = useDispatch();
 
-  console.log("render");
+
 
   const items = [
     "Все",

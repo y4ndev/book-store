@@ -10,6 +10,16 @@ import { selectBasket } from "../../store/slices/basketSlice";
 
 const Header: React.FC = () => {
   const { basketItems } = useSelector(selectBasket);
+  const isMounted = React.useRef(false);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(basketItems);
+      localStorage.setItem("basket", json);
+    }
+
+    isMounted.current = true;
+  }, [basketItems]);
 
   const basketCount = basketItems.reduce(
     (sum: number, obj: { count: number }) => obj.count + sum,
