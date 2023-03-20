@@ -18,7 +18,7 @@ const Products: React.FC<ProductsProps> = ({ data }) => {
   const { categoryName } = useSelector(selectFilter);
   const { status } = useSelector(selectData);
 
-  console.log("render");
+ 
 
   React.useEffect(() => {
     setShow(false);

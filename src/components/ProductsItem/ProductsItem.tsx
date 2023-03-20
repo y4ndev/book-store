@@ -17,7 +17,6 @@ const ProductsItem: React.FC<ProductsItemProps> = React.memo(
     const { basketItems } = useSelector(selectBasket);
     const dispatch = useDispatch();
 
-    console.log("render");
 
     const dataItem = {
       id,
