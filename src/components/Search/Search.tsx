@@ -1,20 +1,29 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectSearch, setSearchValue } from "../../store/slices/searchSlice";
+import debounce from "lodash.debounce";
+import { useDispatch } from "react-redux";
+import { setSearchValue } from "../../store/slices/searchSlice";
 import styles from "./Search.module.scss";
 
 const Search: React.FC = () => {
-  const { searchValue } = useSelector(selectSearch);
+  const [value, setValue] = React.useState("");
+
   const dispatch = useDispatch();
+  const makeSearch = React.useMemo(
+    () =>
+      debounce((str) => {
+        dispatch(setSearchValue(str));
+      }, 700),
+    []
+  );
+
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+    makeSearch(event.target.value);
+  };
 
   return (
     <div className={styles.search}>
-      <input
-        value={searchValue}
-        onChange={(e) => dispatch(setSearchValue(e.target.value))}
-        type="text"
-        placeholder="Поиск..."
-      />
+      <input value={value} onChange={onChangeInput} type="text" placeholder="Поиск..." />
     </div>
   );
 };

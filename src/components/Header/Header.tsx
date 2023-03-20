@@ -1,15 +1,18 @@
 import React from "react";
+
 import { Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Search } from "../Search";
 import book from "../../assets/images/book.svg";
 import basket from "../../assets/images/basket.svg";
 import styles from "./Header.module.scss";
-import { useSelector } from "react-redux";
+
 import { selectBasket } from "../../store/slices/basketSlice";
 
 const Header: React.FC = () => {
   const { basketItems } = useSelector(selectBasket);
+
   const isMounted = React.useRef(false);
 
   React.useEffect(() => {

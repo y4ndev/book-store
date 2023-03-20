@@ -1,271 +1,257 @@
 {
-    "book": [{
-            "id": 1,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/29/186/2918634.jpg",
-            "title": "1984. Скотный двор",
-            "author": "Оруэлл Джордж",
-            "price": 189,
-            "category": 1
-        },
-        {
-            "id": 2,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/29/472/2947283.jpg",
-            "title": "На Западном фронте без перемен",
-            "author": "Ремарк Эрих Мария",
-            "price": 425,
-            "category": 1
-        },
-        {
-            "id": 3,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/27/910/2791095.jpg",
-            "title": "Норвежский лес",
-            "author": "Мураками Харуки",
-            "price": 256,
-            "category": 1
-        },
-        {
-            "id": 4,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/087/2808716.jpg",
-            "title": "Цветы для Элджернона",
-            "author": "Киз Дэниел",
-            "price": 223,
-            "category": 1
-        },
+  "book": [
+    {
+      "id": "1",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/29/186/2918634.jpg",
+      "title": "1984. Скотный двор",
+      "author": "Оруэлл Джордж",
+      "price": 189,
+      "category": 1
+    },
+    {
+      "id": "2",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/29/472/2947283.jpg",
+      "title": "На Западном фронте без перемен",
+      "author": "Ремарк Эрих Мария",
+      "price": 425,
+      "category": 1
+    },
+    {
+      "id": "3",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/27/910/2791095.jpg",
+      "title": "Норвежский лес",
+      "author": "Мураками Харуки",
+      "price": 256,
+      "category": 1
+    },
+    {
+      "id": "4",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/087/2808716.jpg",
+      "title": "Цветы для Элджернона",
+      "author": "Киз Дэниел",
+      "price": 223,
+      "category": 1
+    },
 
-        {
-            "id": 5,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/468/2846845.jpg",
-            "title": "Тень и кость",
-            "author": "Бардуго Ли",
-            "price": 442,
-            "category": 1
-        },
-        {
-            "id": 6,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/29/463/2946360.jpg",
-            "title": "Таинственный сад",
-            "author": "Бернетт Фрэнсис Ходжсон",
-            "price": 221,
-            "category": 1
-        },
+    {
+      "id": "5",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/468/2846845.jpg",
+      "title": "Тень и кость",
+      "author": "Бардуго Ли",
+      "price": 442,
+      "category": 1
+    },
+    {
+      "id": "6",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/29/463/2946360.jpg",
+      "title": "Таинственный сад",
+      "author": "Бернетт Фрэнсис Ходжсон",
+      "price": 221,
+      "category": 1
+    },
 
+    {
+      "id": "7",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/21/115/2111534.jpg",
+      "title": "Самый богатый человек в Вавилоне",
+      "author": "Клейсон Джорж Самюэль",
+      "price": 561,
+      "category": 2
+    },
+    {
+      "id": "8",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/480/2848010.jpg",
+      "title": "Думай и богатей",
+      "author": "Хилл Наполеон",
+      "price": 548,
+      "category": 2
+    },
+    {
+      "id": "9",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/579/2557931.jpg",
+      "title": "Пиши, сокращай",
+      "author": "Ильяхов Максим, Сарычева Людмила",
+      "price": 783,
+      "category": 2
+    },
+    {
+      "id": "10",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/032/2803230.jpg",
+      "title": "Тренажер мозга: Как развить гибкость мышления за 40 дней ",
+      "author": "Мур Гарет",
+      "price": 408,
+      "category": 2
+    },
 
+    {
+      "id": "11",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/26/978/2697802.jpg",
+      "title": "Биология добра и зла",
+      "author": "Сапольски Роберт",
+      "price": 1159,
+      "category": 2
+    },
+    {
+      "id": "12",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/946/2494662.jpg",
+      "title": "Введение в психоанализ",
+      "author": "Фрейд Зигмунд",
+      "price": 216,
+      "category": 2
+    },
 
-        {
-            "id": 7,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/21/115/2111534.jpg",
-            "title": "Самый богатый человек в Вавилоне",
-            "author": "Клейсон Джорж Самюэль",
-            "price": 561,
-            "category": 2
-        },
-        {
-            "id": 8,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/480/2848010.jpg",
-            "title": "Думай и богатей",
-            "author": "Хилл Наполеон",
-            "price": 548,
-            "category": 2
-        },
-        {
-            "id": 9,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/579/2557931.jpg",
-            "title": "Пиши, сокращай",
-            "author": "Ильяхов Максим, Сарычева Людмила",
-            "price": 783,
-            "category": 2
-        },
-        {
-            "id": 10,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/032/2803230.jpg",
-            "title": "Тренажер мозга: Как развить гибкость мышления за 40 дней ",
-            "author": "Мур Гарет",
-            "price": 408,
-            "category": 2
-        },
+    {
+      "id": "13",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/877/2487711.jpg",
+      "title": "Пёс по имени Мани",
+      "author": "Шефер Бодо",
+      "price": 638,
+      "category": 3
+    },
+    {
+      "id": "14",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/607/2560770.jpg",
+      "title": "Букварь",
+      "author": "Жукова Надежда Сергеевна",
+      "price": 423,
+      "category": 3
+    },
+    {
+      "id": "15",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/996/2499696.jpg",
+      "title": "Тайная опора: привязанность в жизни ребенка..",
+      "author": "Петрановская Людмила Владимировна",
+      "price": 338,
+      "category": 3
+    },
 
-        {
-            "id": 11,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/26/978/2697802.jpg",
-            "title": "Биология добра и зла",
-            "author": "Сапольски Роберт",
-            "price": 1159,
-            "category": 2
-        },
-        {
-            "id": 12,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/946/2494662.jpg",
-            "title": "Введение в психоанализ",
-            "author": "Фрейд Зигмунд",
-            "price": 216,
-            "category": 2
-        },
+    {
+      "id": "16",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/625/2562538.jpg",
+      "title": "Сказки народов России. Карельские народные сказки",
+      "author": "",
+      "price": 484,
+      "category": 3
+    },
 
+    {
+      "id": "17",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/357/2535795.jpg",
+      "title": "Основы теории упругого дискретного контакта",
+      "author": "Иван Аргатов",
+      "price": 298,
+      "category": 4
+    },
+    {
+      "id": "18",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/942/2594211.jpg",
+      "title": "Ономатопоэтические слова японского языка. Учебное пособие для продолжающих",
+      "author": "Наталья Румак",
+      "price": 373,
+      "category": 4
+    },
+    {
+      "id": "19",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/27/320/2732025.jpg",
+      "title": "Литературное чтение. 1 класс. Тетрадь учебных достижений. Учебное пособие для общеобразовательных организаций",
+      "author": "Марина Бойкина",
+      "price": 256,
+      "category": 4
+    },
 
+    {
+      "id": "20",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/20/707/2070731.jpg",
+      "title": "Семь навыков высокоэффективных людей. Мощные инструменты развития личности",
+      "author": "Стивен Р. Кови",
+      "price": 591,
+      "category": 5
+    },
+    {
+      "id": "21",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/181/2418104.jpg",
+      "title": "Искусство любить",
+      "author": "Эрих Фромм",
+      "price": 244,
+      "category": 5
+    },
+    {
+      "id": "22",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/398/2839894.jpg",
+      "title": "Девочка. Девушка. Женщина",
+      "author": "Марк Бартон",
+      "price": 345,
+      "category": 5
+    },
 
-        {
-            "id": 13,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/877/2487711.jpg",
-            "title": "Пёс по имени Мани",
-            "author": "Шефер Бодо",
-            "price": 638,
-            "category": 3
-        },
-        {
-            "id": 14,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/607/2560770.jpg",
-            "title": "Букварь",
-            "author": "Жукова Надежда Сергеевна",
-            "price": 423,
-            "category": 3
-        },
-        {
-            "id": 15,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/996/2499696.jpg",
-            "title": "Тайная опора: привязанность в жизни ребенка..",
-            "author": "Петрановская Людмила Владимировна",
-            "price": 338,
-            "category": 3
-        },
+    {
+      "id": "23",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/26/057/2605703.jpg",
+      "title": "Введение в психоанализ",
+      "author": "Зигмунд Фрейд",
+      "price": 261,
+      "category": 6
+    },
+    {
+      "id": "24",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/10/089/100893.jpg",
+      "title": "Государь",
+      "author": "Никколо Макиавелли",
+      "price": 191,
+      "category": 6
+    },
+    {
+      "id": "25",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/251/2825161.jpg",
+      "title": "Мозг и его потребности: От питания до признания",
+      "author": "Вячеслав Дубынин",
+      "price": 892,
+      "category": 6
+    },
 
+    {
+      "id": "26",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/31/040/310402.jpg",
+      "title": "Свет и изображение. Некоторые вопросы, касающиеся искусства./Заметки художника (Симфония)",
+      "author": "Максимилиан Пресняков",
+      "price": 774,
+      "category": 7
+    },
 
-        {
-            "id": 16,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/625/2562538.jpg",
-            "title": "Сказки народов России. Карельские народные сказки",
-            "author": "",
-            "price": 484,
-            "category": 3
-        },
+    {
+      "id": "27",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/31/134/311349.jpg",
+      "title": "Архитектурный рисунок гипсовой головы. В истории, теории и практике. Базовый курс : Учебное пособие",
+      "author": "Алексей Мусатов, Ольга Осмоловская",
+      "price": 325,
+      "category": 7
+    },
 
+    {
+      "id": "28",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/546/2554601.jpg",
+      "title": "Психология",
+      "author": "",
+      "price": 2550,
+      "category": 8
+    },
 
+    {
+      "id": "29",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/466/2446679.jpg",
+      "title": "Бизнес: Restart: 25 способов выйти на новый уровень",
+      "author": "Барри Мольц",
+      "price": 2550,
+      "category": 9
+    },
 
-        {
-            "id": 17,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/357/2535795.jpg",
-            "title": "Основы теории упругого дискретного контакта",
-            "author": "Иван Аргатов",
-            "price": 298,
-            "category": 4
-        },
-        {
-            "id": 18,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/942/2594211.jpg",
-            "title": "Ономатопоэтические слова японского языка. Учебное пособие для продолжающих",
-            "author": "Наталья Румак",
-            "price": 373,
-            "category": 4
-        },
-        {
-            "id": 19,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/27/320/2732025.jpg",
-            "title": "Литературное чтение. 1 класс. Тетрадь учебных достижений. Учебное пособие для общеобразовательных организаций",
-            "author": "Марина Бойкина",
-            "price": 256,
-            "category": 4
-        },
-
-        {
-            "id": 20,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/20/707/2070731.jpg",
-            "title": "Семь навыков высокоэффективных людей. Мощные инструменты развития личности",
-            "author": "Стивен Р. Кови",
-            "price": 591,
-            "category": 5
-        },
-        {
-            "id": 21,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/181/2418104.jpg",
-            "title": "Искусство любить",
-            "author": "Эрих Фромм",
-            "price": 244,
-            "category": 5
-        },
-        {
-            "id": 22,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/398/2839894.jpg",
-            "title": "Девочка. Девушка. Женщина",
-            "author": "Марк Бартон",
-            "price": 345,
-            "category": 5
-        },
-
-
-
-
-        {
-            "id": 23,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/26/057/2605703.jpg",
-            "title": "Введение в психоанализ",
-            "author": "Зигмунд Фрейд",
-            "price": 261,
-            "category": 6
-        },
-        {
-            "id": 24,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/10/089/100893.jpg",
-            "title": "Государь",
-            "author": "Никколо Макиавелли",
-            "price": 191,
-            "category": 6
-        },
-        {
-            "id": 25,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/28/251/2825161.jpg",
-            "title": "Мозг и его потребности: От питания до признания",
-            "author": "Вячеслав Дубынин",
-            "price": 892,
-            "category": 6
-        },
-
-
-        {
-            "id": 26,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/31/040/310402.jpg",
-            "title": "Свет и изображение. Некоторые вопросы, касающиеся искусства./Заметки художника (Симфония)",
-            "author": "Максимилиан Пресняков",
-            "price": 774,
-            "category": 7
-        },
-
-
-        {
-            "id": 27,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/31/134/311349.jpg",
-            "title": "Архитектурный рисунок гипсовой головы. В истории, теории и практике. Базовый курс : Учебное пособие",
-            "author": "Алексей Мусатов, Ольга Осмоловская",
-            "price": 325,
-            "category": 7
-        },
-
-        {
-            "id": 28,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/25/546/2554601.jpg",
-            "title": "Психология",
-            "author": "",
-            "price": 2550,
-            "category": 8
-        },
-
-        {
-            "id": 29,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/466/2446679.jpg",
-            "title": "Бизнес: Restart: 25 способов выйти на новый уровень",
-            "author": "Барри Мольц",
-            "price": 2550,
-            "category": 9
-        },
-
-        {
-            "id": 30,
-            "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/453/2445341.jpg",
-            "title": "Стартап-гайд: Как начать и….не закрыть свой интернет-бизнес",
-            "author": "Маргарита Зобнина",
-            "price": 924,
-            "category": 9
-        }
-
-    ]
-
-
+    {
+      "id": "30",
+      "imageUrl": "https://cdn.img-gorod.ru/200x280/nomenclature/24/453/2445341.jpg",
+      "title": "Стартап-гайд: Как начать и….не закрыть свой интернет-бизнес",
+      "author": "Маргарита Зобнина",
+      "price": 924,
+      "category": 9
+    }
+  ]
 }
