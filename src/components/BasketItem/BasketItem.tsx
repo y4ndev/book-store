@@ -34,7 +34,7 @@ const BasketItem: React.FC = () => {
       {basketItems.length > 0 ? (
         <div className={styles.items}>
           {basketItems.map((obj: Goods & { count: number }) => (
-            <div className={styles.item}>
+            <div className={styles.item} key={obj.id}>
               <div className={styles.info}>
                 <img src={obj.imageUrl} alt="book" />
                 <div className={styles.desc}>

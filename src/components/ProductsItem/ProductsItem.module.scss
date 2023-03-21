@@ -95,4 +95,16 @@
   }
 }
 
+@media (max-width: 575px) {
+  .item {
+    min-height: 400px;
+  }
 
+  .item img {
+    height: 240px;
+  }
+
+  .btn {
+    width: 85%;
+  }
+}

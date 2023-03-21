@@ -36,7 +36,6 @@ export const filterSlice = createSlice({
     },
     setSortType: (state, action: PayloadAction<ISort>) => {
       state.sortType = action.payload;
-      console.log(action.payload);
     },
     setPaginationValue: (state, action: PayloadAction<number>) => {
       state.paginationValue = action.payload;

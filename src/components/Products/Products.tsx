@@ -13,15 +13,16 @@ interface ProductsProps {
   data: Goods[];
 }
 
-const Products: React.FC<ProductsProps> = ({ data }) => {
+const Products: React.FC<ProductsProps> = React.memo(({ data }) => {
   const [show, setShow] = React.useState(false);
   const { categoryName } = useSelector(selectFilter);
   const { status } = useSelector(selectData);
 
- 
-
   React.useEffect(() => {
-    setShow(false);
+    if (status === "loading") {
+      setShow(false);
+    }
+
     if (status === "success") {
       setShow(true);
     }
@@ -31,7 +32,7 @@ const Products: React.FC<ProductsProps> = ({ data }) => {
     <div className={styles.product}>
       <Sort />
       <h3>{categoryName}</h3>
-      <CSSTransition in={show} timeout={500} unmountOnExit classNames="my-node">
+      <CSSTransition in={show} timeout={200} classNames="my-node" unmountOnExit mountOnEnter>
         <div className={styles.items}>
           {data.map((obj, index: number) => (
             <ProductsItem key={index} {...obj} />
@@ -42,6 +43,6 @@ const Products: React.FC<ProductsProps> = ({ data }) => {
       <Pagination />
     </div>
   );
-};
+});
 
 export { Products };

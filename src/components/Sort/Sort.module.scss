@@ -41,3 +41,15 @@
     }
   }
 }
+
+@media (max-width: 320.98px) {
+  .sort {
+    .inner {
+      flex-direction: column;
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
+  }
+}

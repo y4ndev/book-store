@@ -8,7 +8,7 @@ import { Sidebar } from "../components/Sidebar";
 import { selectFilter } from "../store/slices/filterSlice";
 import { selectSearch } from "../store/slices/searchSlice";
 
-const Home = () => {
+const Home: React.FC = () => {
   const { dataItems } = useSelector(selectData);
   const dispatch = useAppDispatch();
 
@@ -20,11 +20,6 @@ const Home = () => {
     const search = searchValue.length > 0 ? `&search=${searchValue}` : "";
     const pagination = `page=${paginationValue + 1}&limit=6`;
     const sort = sortType.sortProps;
-
-    // const category = categoryId > 0 ? `category=${categoryId}` : "";
-    // const search = searchValue.length > 0 ? `&q=${searchValue}` : "";
-    // const pagination = `&_page=${paginationValue + 1}&_limit=6`;
-    // const sort = sortType.sortProps;
 
     dispatch(fetchDataItems({ category, search, pagination, sort }));
     window.scroll(0, 0);

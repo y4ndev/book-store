@@ -24,3 +24,11 @@
     }
   }
 }
+
+@media (max-width: 320.98px) {
+  .product {
+    .items {
+      grid-template-columns: repeat(auto-fill, 100%);
+    }
+  }
+}
