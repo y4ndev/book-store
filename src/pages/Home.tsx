@@ -16,9 +16,9 @@ const Home: React.FC = () => {
   const { searchValue } = useSelector(selectSearch);
 
   React.useEffect(() => {
-    const category = categoryId > 0 ? `&category=${categoryId}` : "";
-    const search = searchValue.length > 0 ? `&search=${searchValue}` : "";
-    const pagination = `page=${paginationValue + 1}&limit=6`;
+    const category = categoryId > 0 ? `category=${categoryId}` : "";
+    const search = searchValue.length > 0 ? `&q=${searchValue}` : "";
+    const pagination = `&_page=${paginationValue + 1}&_limit=6`;
     const sort = sortType.sortProps;
 
     dispatch(fetchDataItems({ category, search, pagination, sort }));
