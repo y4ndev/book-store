@@ -28,7 +28,7 @@ export const fetchDataItems = createAsyncThunk(
   async (params: Record<string, string>) => {
     const { category, sort, search, pagination } = params;
     const resp = await axios.get<Goods[]>(
-      `http://localhost:3001/book?${category}&_sort=${sort}${search}${pagination}`
+      `https://63d6a236e60d5743697c6895.mockapi.io/items?${pagination}${category}&sortBy=${sort}&order=asc${search}`
     );
 
     return resp.data as Goods[];
@@ -36,7 +36,7 @@ export const fetchDataItems = createAsyncThunk(
 );
 
 export const fetchDataCard = createAsyncThunk("items/fetchDataCardStatus", async (id: string) => {
-  const resp = await axios.get<Goods>(`http://localhost:3001//book/${id}`);
+  const resp = await axios.get<Goods>(`https://63d6a236e60d5743697c6895.mockapi.io/items/${id}`);
   return resp.data as Goods;
 });
 
